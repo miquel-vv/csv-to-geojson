@@ -28,6 +28,8 @@ def create_geojson(file_name):
     collection = FeatureCollection(feat_list)
     with open(output_file, 'w') as f:
         f.write(dumps(collection))
+    
+    return output_file
 
 def remove_np_from_dict(d):
     '''numpy int64 objects are not serializable so need to convert values first.'''
