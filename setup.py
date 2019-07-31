@@ -23,4 +23,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    entry_points={
+        'console_scripts': ['csv_to_geojson=csv_to_geojson.command_line:main']
+    }
 )

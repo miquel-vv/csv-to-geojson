@@ -1,7 +1,7 @@
 import os
-from geojson_transformer import create_geojson
+from .geojson_transformer import create_geojson
 
-def main():
+def cli():
     import sys
     if len(sys.argv) > 2:
         raise TypeError("Only the csv filename should be passed as argument. {} arguments were given.".format(len(sys.argv)-1))
@@ -12,8 +12,12 @@ def main():
     
     if not os.path.isfile(file_name):
         raise TypeError("{} is not a file".format(file_name))
-    
-    print("Starting converison...")
+
+    return file_name
+
+def main():
+    file_name = cli()    
+    print("Starting conversion...")
     output = create_geojson(file_name)
     print("Geojson created at {}".format(output))
 
