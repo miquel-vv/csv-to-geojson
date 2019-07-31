@@ -7,7 +7,7 @@ def create_geojson(file_name):
     fold = os.path.dirname(file_name)
     name,_ = os.path.basename(file_name).split('.')
     
-    output_file = os.path.join(fold, '{}_output.geojson'.format(name))
+    output_file = os.path.join(fold, '{}.geojson'.format(name))
     
     df = pandas.read_csv(file_name).fillna('')
     lat = df['lat']
